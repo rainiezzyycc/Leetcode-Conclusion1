@@ -33,12 +33,15 @@ if __name__ == '__main__':
     
 class Solution:
     def twoSums(self,nums,target):
-        nums_hash = {}
-        for i ,v in enumerate(nums):
+        nums_hash = {} #创建一个空字典
+        for i ,v in enumerate(nums): #以角标为键，对应数字为值
             dif = target - v
+            
             if dif in nums_hash:
-                return [nums_hash[dif],i]
-            nums_hash[v]=i
+                return [nums_hash[dif],i] #如果哈希表中存在满足题设的数，则输出这两个数的角标
+            
+            nums_hash[v]=i #否则存入哈希表
+            
         return []
 
 
